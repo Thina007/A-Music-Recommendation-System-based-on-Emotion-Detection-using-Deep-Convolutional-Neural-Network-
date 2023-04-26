@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPOTIFY</title>
+</head>
+
+<body>
+    <div id="data" hidden>{{data}}</div>
+    <iframe style="border-radius:12px" id="player"
+        src="" width="100%"
+        height="380" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</body>
+<script>
+    var v = document.getElementById('data').innerHTML;
+    console.log(v)
+    var list = JSON.parse(v)
+    var album_link = list[0]['Link']
+    console.log(album_link)
+    document.getElementById('player').src = album_link;
+    document.querySelector('[title="data"]').click()
+</script>
+
+</html>
